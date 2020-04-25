@@ -48,6 +48,7 @@ public class MainController {
             mav.addObject("text", responseJson.get("text"));
             mav.addObject("summarizertype", responseJson.get("summarizertype"));
             mav.addObject("compression", responseJson.get("compression"));
+            mav.addObject("consumer_id", responseJson.get("consumer_id"));
 
         } catch (JSONException e) {
             e.printStackTrace();
