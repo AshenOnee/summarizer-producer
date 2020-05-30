@@ -25,17 +25,14 @@ public class RabbitConfiguration {
 
     @Bean
     public ConnectionFactory connectionFactory() {
-        //получаем адрес AMQP у провайдера
         String uri = AMQP_URL;
-        if (uri == null) //значит мы запущены локально и нужно подключаться к локальному rabbitmq
+        if (uri == null)
             uri = "amqp://guest:guest@localhost";
         URI url = null;
-        try
-        {
+        try {
             url = new URI(uri);
-        } catch (URISyntaxException e)
-        {
-            e.printStackTrace(); //тут ошибка крайне маловероятна
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
 
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory();

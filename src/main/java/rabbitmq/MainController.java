@@ -53,9 +53,6 @@ public class MainController {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         return mav;
-
     }
-
 }
